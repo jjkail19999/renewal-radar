@@ -30,7 +30,7 @@ export function MyWeek() {
 
       <div className="space-y-4">
         {data.this_week.map((row: any) => (
-          <article key={row.account_id} className="grid gap-5 rounded-xl border border-line bg-panel p-5 lg:grid-cols-[220px_1fr_380px]">
+          <article key={row.account_id} className="grid gap-5 rounded-xl border border-line bg-panel p-5 md:grid-cols-[190px_minmax(0,1fr)] xl:grid-cols-[210px_minmax(0,1fr)_360px]">
             <div className="space-y-2">
               <RiskPill band={row.band} score={row.score} />
               <Link to={`/${clientId}/accounts/${row.account_id}`} className="group flex items-start gap-1 text-lg font-bold leading-tight hover:text-act">
@@ -43,14 +43,14 @@ export function MyWeek() {
                 </div>
                 <div>{euroShort(row.annual_value)} a year</div>
                 {row.activity_pct <= -0.08 && (
-                  <div className="flex items-center gap-1 text-high">
-                    <TrendingDown size={14} /> {v.activity} {Math.round(row.activity_pct * 100)}%
+                  <div className="flex items-start gap-1 text-high">
+                    <TrendingDown size={14} className="mt-0.5 shrink-0" /> <span>{v.activity}: {Math.round(row.activity_pct * 100)}%</span>
                   </div>
                 )}
               </dl>
             </div>
 
-            <div className="min-w-0 border-line lg:border-l lg:pl-5">
+            <div className="min-w-0 border-line md:border-l md:pl-5">
               <p className="mb-2 text-xs font-medium text-ink-3">{row.reason?.kind === "signal" ? row.reason.label : "Why it's flagged"}</p>
               {row.reason?.kind === "signal" ? (
                 <Quote text={row.reason.quote} speaker={row.reason.speaker} meta={`${row.reason.title}, ${row.reason.date}`} size="lg" />
@@ -63,7 +63,7 @@ export function MyWeek() {
               })()}
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 md:col-span-2 xl:col-span-1">
               <ActionCard action={row.action} compact />
               {row.more_actions > 0 && (
                 <Link to={`/${clientId}/accounts/${row.account_id}`} className="block px-1 text-xs font-medium text-act hover:underline">

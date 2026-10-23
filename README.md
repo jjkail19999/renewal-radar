@@ -77,4 +77,4 @@ the hackathon (synthetic data only).
   at http://localhost:5173.
 - Words on screen come from the industry pack (`backend/app/packs/*.yaml` `vocabulary`), so test every change in
   both workspaces: Brightdesk (SaaS) and Kranich Studio (agency).
-- `docs/screenshots` shows the first-pass screens (captured in offline mode).
+- `docs/screenshots` shows the first-pass screens from a live AI run (Portfolio is from offline data).

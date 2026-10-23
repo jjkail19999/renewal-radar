@@ -55,9 +55,9 @@ export function Portfolio() {
                 <XAxis dataKey="label" tick={{ fontSize: 12, fill: "#7B8494" }} axisLine={false} tickLine={false} />
                 <YAxis tickFormatter={(n) => euroShort(n)} tick={{ fontSize: 11, fill: "#7B8494" }} axisLine={false} tickLine={false} />
                 <Tooltip formatter={(n: any) => euro(n)} cursor={{ fill: "#F3F5F8" }} />
-                <Bar dataKey="high" stackId="a" fill={COLORS.high} name="High risk" />
-                <Bar dataKey="medium" stackId="a" fill={COLORS.medium} name="Watch" />
-                <Bar dataKey="low" stackId="a" fill={COLORS.low} name="Healthy" radius={[4, 4, 0, 0]} />
+                <Bar isAnimationActive={false} dataKey="high" stackId="a" fill={COLORS.high} name="High risk" />
+                <Bar isAnimationActive={false} dataKey="medium" stackId="a" fill={COLORS.medium} name="Watch" />
+                <Bar isAnimationActive={false} dataKey="low" stackId="a" fill={COLORS.low} name="Healthy" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -70,9 +70,9 @@ export function Portfolio() {
                 <XAxis type="number" tickFormatter={(n) => euroShort(n)} tick={{ fontSize: 11, fill: "#7B8494" }} axisLine={false} tickLine={false} />
                 <YAxis type="category" dataKey="key" width={130} tick={{ fontSize: 12, fill: "#4A5566" }} axisLine={false} tickLine={false} />
                 <Tooltip formatter={(n: any) => euro(n)} cursor={{ fill: "#F3F5F8" }} />
-                <Bar dataKey="high" stackId="a" fill={COLORS.high} name="High risk" />
-                <Bar dataKey="medium" stackId="a" fill={COLORS.medium} name="Watch" />
-                <Bar dataKey="low" stackId="a" fill={COLORS.low} name="Healthy" radius={[0, 4, 4, 0]} />
+                <Bar isAnimationActive={false} dataKey="high" stackId="a" fill={COLORS.high} name="High risk" />
+                <Bar isAnimationActive={false} dataKey="medium" stackId="a" fill={COLORS.medium} name="Watch" />
+                <Bar isAnimationActive={false} dataKey="low" stackId="a" fill={COLORS.low} name="Healthy" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
